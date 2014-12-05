@@ -1,0 +1,17 @@
+DELETE FROM company_work_history
+WHERE id = $id;
+
+DELETE FROM education
+WHERE id = $id;
+
+DELETE FROM non_company_work_history
+WHERE id = $id;
+
+DELETE FROM performance
+WHERE id = $id;
+
+DELETE FROM skills
+WHERE id = $id;
+
+DELETE FROM employee
+WHERE id = $id;
