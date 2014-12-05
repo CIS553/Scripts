@@ -1,0 +1,62 @@
+UPDATE employee
+SET
+country = $country,
+email = $email,
+level = $level,
+hire_date = $hire_date,
+name =$name,
+region = $region,
+supervisor = $supervisor,
+team = $team,
+title = $title
+WHERE id = $id;
+
+UPDATE company_work_history
+SET
+country = $country,
+description = $description,
+level = $level,
+region = $region,
+skill_team = $skill_team,
+skills_used = $skills_used,
+start_date = $start_date,
+end_date = $end_date,
+title = $title
+WHERE id = $id;
+
+UPDATE education
+SET
+degree = $degree,
+major = $major,
+minor = $minor,
+school = $school,
+start_date = $start_date,
+end_date = $end_date,
+WHERE id = $id;
+
+UPDATE non_company_work_history
+SET
+company = $company,
+description = $description,
+skill_team = $skill_team,
+skills_used = $skills_used,
+start_date = $start_date,
+end_date = $end_date,
+title = $title
+WHERE id = $id;
+
+UPDATE performance
+SET
+rating = $rating,
+review_author_Name = $review_author_Name,
+start_date = $start_date,
+end_date = $end_date,
+WHERE id = $id;
+
+UPDATE skills
+SET
+skill = $skill,
+skill_level = $skill_level
+WHERE id = $id;
+
+
