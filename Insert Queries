@@ -1,34 +1,35 @@
 INSERT INTO employee
-(country, email, level, hire_date, name, region, supervisor, team, title)
+(emp_country, emp_email, emp_level, emp_hire_date, emp_name, emp_region, emp_supervisor, emp_team, emp_title)
 VALUES
 ($country, $email, $level, $hire_date, $name, $region, $supervisor, $team, $title);
 
 
 INSERT INTO company_work_history
-(country, description, level, region, skill_team, skills_used, start_date, end_date, title)
+(cwh_id, cwh_country, cwh_description, cwh_level, cwh_region, cwh_skill_team, cwh_skills_used, cwh_start_date, cwh_end_date, cwh_title)
 VALUES
-($country, $description, $level, $region, $skill_team, $skills_used, $start_date, $end_date, $title)
-WHERE
-id = $id;
+($id, $country, $description, $level, $region, $skill_team, $skills_used, $start_date, $end_date, $title);
 
 
 INSERT INTO non_company_work_history
-(company, description, skill_team, skills_used, start_date, end_date, title)
+(ncwh_id, ncwh_company, ncwh_description, ncwh_skill_team, ncwh_skills_used, ncwh_start_date, ncwh_end_date, ncwh_title)
 VALUES
-($company, $description, $skill_team, $skills_used, $start_date, $end_date, $title)
-WHERE
-id = $id;
+($id, $company, $description, $skill_team, $skills_used, $start_date, $end_date, $title);
+
+
+INSERT INTO education
+(ed_id, ed_degree, ed_major, ed_minor, ed_school, ed_start_date, ed_end_date)
+VALUES
+($id, $degree, $major, $minor, $school, $start_date, $end_date);
+
 
 INSERT INTO performance
-(rating, review_author_Name, start_date, end_date) 
+(per_id, per_rating, per_review_author_Name, per_start_date, per_end_date) 
 VALUES
-($rating, $review_author_Name, $start_date, $end_date)
-WHERE
-id = $id;
+($id, $rating, $review_author_Name, $start_date, $end_date);
+
 
 INSERT INTO skills
-(skill, skill_level)
+(s_id, sk_skill, sk_skill_level)
 VALUES
-($skill, $skill_level)
-WHERE
-id = $id;
+($id, $skill, $skill_level);
+
