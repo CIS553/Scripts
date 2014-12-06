@@ -1,0 +1,39 @@
+-- --------------------------------------------------------------------------------
+-- Routine DDL
+-- --------------------------------------------------------------------------------
+DELIMITER $$
+
+CREATE DEFINER=`cis562`@`localhost` PROCEDURE `test1`(IN param1 VARCHAR(25), value1 VARCHAR(50), param2 VARCHAR(25), value2 VARCHAR(50), param3 VARCHAR(25), value3 VARCHAR(50), param4 VARCHAR(25), value4 VARCHAR(50), param5 VARCHAR(25), value5 VARCHAR(50))
+BEGIN
+
+SET @s = CONCAT('SELECT emp_name, emp_id FROM employee 
+INNER JOIN skills 
+ON id = sk_id 
+INNER JOIN education 
+ON emp_id = ed_id');
+
+IF param1 IS NOT NULL THEN
+SET @s = CONCAT(@s, ' WHERE ',param1,' = "',value1, '"');
+END IF;
+
+IF param2 IS NOT NULL THEN
+SET @s = CONCAT(@s, ' AND ',param2,' = "',value2, '"');
+END IF;
+
+IF param3 IS NOT NULL THEN
+SET @s = CONCAT(@s, ' AND ',param3,' = "',value3, '"');
+END IF;
+
+IF param4 IS NOT NULL THEN
+SET @s = CONCAT(@s, ' AND ',param4,' = "',value4, '"');
+END IF;
+
+IF param5 IS NOT NULL THEN
+SET @s = CONCAT(@s, ' AND ',param5,' = "',value5, '"');
+END IF;
+
+
+PREPARE stmt FROM @s;
+EXECUTE stmt;
+
+END
