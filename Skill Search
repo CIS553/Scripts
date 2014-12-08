@@ -1,4 +1,4 @@
-SELECT emp_name, emp_id FROM employee
+SELECT emp_name, id FROM employee
 INNER JOIN skills
-ON emp_id = sk_id
+ON id = sk_id
 WHERE sk_skill = @skill
